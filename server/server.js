@@ -1,8 +1,8 @@
 const express = require('express');
 const db = require('./db');
 const logger = require('morgan');
+const { coaster } = require('./controllers');
 
-// MIDDLEWARE
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -15,3 +15,5 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 app.get('/', (req, res) => {
 	res.send('root successfully loaded');
 });
+
+app.get('/coasters', coaster.getCoasters);
