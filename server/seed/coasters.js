@@ -17,8 +17,7 @@ const main = async () => {
       duration: '1 min 40 sec',
       image:
         'https://sf-static.sixflags.com/wp-content/uploads/2020/04/sfgadv_batmancoaster_1440x1533_2_2-282x300.jpg',
-      park_id: sixFlagsGreatAdventure[0],
-      _id
+      park_id: sixFlagsGreatAdventure[0]._id
     }
   ]
 
