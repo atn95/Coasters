@@ -1,19 +1,19 @@
-import React from 'react'
+import React from 'react';
 
 function Search() {
-  return (
-    <div> 
-         <input
-            className = 'searchInput' 
-            type = 'text'
-            id = 'search'
-            placeholder = 'Search Roller Coaster'
-        />
-<button className = 'searchBtn' 
-        type = 'submit'>Search
-        </button>
-        </div>
-  )
+	return (
+		<div className='search-bar'>
+			<input
+				className='searchInput'
+				type='text'
+				id='search'
+				placeholder='Search Roller Coaster'
+			/>
+			<button className='searchBtn' type='submit'>
+				Search
+			</button>
+		</div>
+	);
 }
 
-export default Search
+export default Search;
