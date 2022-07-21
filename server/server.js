@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('./db');
 const logger = require('morgan');
-const { coaster } = require('./controllers');
+const dbCalls = require('./controllers');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -16,4 +16,21 @@ app.get('/', (req, res) => {
 	res.send('root successfully loaded');
 });
 
-app.get('/coasters', coaster.getCoasters);
+app.get(
+	'/coasters',
+	(req, res, next) => {
+		console.log(dbCalls.coaster);
+		// res.send('testing');
+		next();
+	},
+	dbCalls.coaster.getAllCoasters
+);
+
+app.get(
+	'/coasters/:id',
+	(req, res, next) => {
+		console.log('called');
+		next();
+	},
+	dbCalls.coaster.getCoasterByID
+);

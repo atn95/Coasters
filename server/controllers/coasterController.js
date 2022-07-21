@@ -1,6 +1,6 @@
 const { Coaster } = require('../models');
 
-const getCoasters = async (req, res) => {
+const getAllCoasters = async (req, res) => {
 	try {
 		const coasters = await Coaster.find({});
 		if (coasters.length > 0) {
@@ -12,6 +12,18 @@ const getCoasters = async (req, res) => {
 	}
 };
 
+const getCoasterByID = async (req, res) => {
+	let { id } = req;
+	try {
+		let park = await CoasterPlant.findById(id);
+		if (park) {
+			res.json(park[0]);
+		}
+		res.send('invalid coaster');
+	} catch (error) {}
+};
+
 module.exports = {
-	getCoasters,
+	getAllCoasters,
+	getCoasterByID,
 };
