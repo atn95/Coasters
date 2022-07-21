@@ -9,7 +9,10 @@ function Search() {
             id = 'search'
             placeholder = 'Search Roller Coaster'
         />
-<button type = 'submit'>Search</button></div>
+<button className = 'searchBtn' 
+        type = 'submit'>Search
+        </button>
+        </div>
   )
 }
 

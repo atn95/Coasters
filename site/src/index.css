@@ -28,15 +28,30 @@ code {
 	height: 60vh;
 }
 
-.coasterTitle {
-	font-size: 5rem;
+.coasterTitle{
+  font-size: 5rem;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
-.searchInput {
-	opacity: 90%;
-	width: 15rem;
-	height: 2rem;
-	font-size: 1rem;
+.searchInput{
+  opacity: 90%; 
+  width: 15rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: 'Mochiy Pop One', sans-serif;
+  
+}
+
+.searchBtn{
+  width: 120px;
+  height: 2rem;
+  color: white;
+  background-color: red;
+  margin: 15px;
+  font-weight: 800;
+  font-size: 14px;;
+  font-family: 'Mochiy Pop One', sans-serif;
+  
 }
 
 .parks {
