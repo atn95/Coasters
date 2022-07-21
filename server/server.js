@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
 });
 
 app.get(
+	'/coasters/:id',
+	(req, res, next) => {
+		console.log('called');
+		next();
+	},
+	dbCalls.coaster.getCoasterByID
+);
+
+app.get(
 	'/coasters',
 	(req, res, next) => {
 		console.log(dbCalls.coaster);
@@ -24,13 +33,4 @@ app.get(
 		next();
 	},
 	dbCalls.coaster.getAllCoasters
-);
-
-app.get(
-	'/coasters/:id',
-	(req, res, next) => {
-		console.log('called');
-		next();
-	},
-	dbCalls.coaster.getCoasterByID
 );
