@@ -4,7 +4,7 @@
  * # of coasters
  * url(image or logo)
  */
-const { Schema } = require('mongoose')
+const { Schema } = require('mongoose');
 
 const Park = new Schema(
   {
@@ -17,4 +17,4 @@ const Park = new Schema(
   { timestamps: true }
 )
 
-module.export = Park
+module.exports = Park;
