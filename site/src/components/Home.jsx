@@ -1,11 +1,15 @@
 import React from 'react'
-import Search from '/components/Search'
+import Search from './Search'
 
-const Home = () =>{
+const Home = () => {
     return(
         <div>
-            <h1> Coaster Crazy </h1>
-            <Search/>
+            <div>
+                 <h1> Coaster Crazy </h1>
+            </div>
+            <div>
+                <Search/>
+            </div>
 
             
         </div>

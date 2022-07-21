@@ -9,12 +9,14 @@ function App() {
       <header>
         <Home />
       </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/park/:parkId" element={<Park />} />
-        <Route path="/coaster/:coasterId" element={<Coasters />} />
-      </Routes>
 
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/park/:parkId" element={<Park />} />
+          <Route path="/coaster/:coasterId" element={<Coasters />} />
+        </Routes>
+      </main>
       {/* <Route path =  /> */}
 
       {/* landing  
