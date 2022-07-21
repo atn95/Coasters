@@ -1,25 +1,23 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Park from "./components/Park";
-import Coasters from "./components/Coasters";
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Park from './components/Park';
+import Coasters from './components/Coasters';
+import Header from './components/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-        <Home />
-      </header>
+	return (
+		<div className='App'>
+			<Header />
+			<main className='body'>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/park/:parkId' element={<Park />} />
+					<Route path='/coaster/:coasterId' element={<Coasters />} />
+				</Routes>
+			</main>
+			{/* <Route path =  /> */}
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/park/:parkId" element={<Park />} />
-          <Route path="/coaster/:coasterId" element={<Coasters />} />
-        </Routes>
-      </main>
-      {/* <Route path =  /> */}
-
-      {/* landing  
+			{/* landing  
        - header,
        -search bar, 
        -parks
@@ -40,8 +38,8 @@ function App() {
       -duration
       -park name
        */}
-    </div>
-  );
+		</div>
+	);
 }
 
 export default App;

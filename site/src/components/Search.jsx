@@ -3,12 +3,16 @@ import React from 'react'
 function Search() {
   return (
     <div> 
-         <input 
+         <input
+            className = 'searchInput' 
             type = 'text'
             id = 'search'
-            placeholder = 'Search a Roller Coaster'
+            placeholder = 'Search Roller Coaster'
         />
-<button type = 'submit'>Search</button></div>
+<button className = 'searchBtn' 
+        type = 'submit'>Search
+        </button>
+        </div>
   )
 }
 

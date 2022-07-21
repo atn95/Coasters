@@ -1,6 +1,7 @@
 const { Coaster } = require('../models')
 
 const getAllCoasters = async (req, res) => {
+
   try {
     const coasters = await Coaster.find({})
     if (coasters.length > 0) {
@@ -24,6 +25,7 @@ const getCoasterByID = async (req, res) => {
     }
   } catch (error) {}
 }
+
 
 module.exports = {
   getAllCoasters,
