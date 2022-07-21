@@ -24,3 +24,10 @@ const main = async () => {
   await Coaster.insertOne(coasters)
   console.log('Created coasters!')
 }
+
+const run = async () => {
+  await main()
+  db.close()
+}
+
+run()

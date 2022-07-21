@@ -17,7 +17,7 @@ const Coaster = new Schema(
     top_speed: { type: String, required: true },
     duration: { type: String, required: true },
     image: { type: String, required: true },
-    parks: { type: Schema.Types.ObjectId, ref: 'Park' }
+    park_id: { type: Schema.Types.ObjectId, ref: 'Park' }
   },
   { timestamps: true }
 )
