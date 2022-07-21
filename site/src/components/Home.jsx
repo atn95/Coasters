@@ -1,27 +1,48 @@
-import React from 'react'
-import Search from './Search'
+import React from 'react';
+import Search from './Search';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import ParkCard from './ParkCard';
 
 const Home = () => {
-    return(
-        <div>
-            <div>
-                 <h1 className = 'coasterTitle'> Coaster Crazy </h1>
-            </div>
-            <div>
-                <Search/>
-            </div>
-            <div className = 'parks'>
-                <p>park 1</p>
-                <p>park 2</p>
-                <p>park 3</p>
-                <p>park 4</p>
-                <p>park 5</p>
-                <p>park 6</p>
-            
-            </div>
-            
-        </div>
-    )
-}
+	let [parks, setParks] = useState([]);
 
-export default Home
+	useEffect(() => {
+		async function getParks() {
+			let parks = axios.get('http://localhost:3001/coasters').then((res) => {
+				console.log(res.data);
+				setParks(res.data);
+			});
+		}
+		getParks();
+	}, []);
+
+	const styles = {
+		flexContainer: {
+			display: 'flex',
+			flexDirection: 'row',
+			flexWrap: 'wrap',
+			border: '2px solid red',
+		},
+		gridContainer: {
+			display: 'grid',
+			gridTemplateColumns: '1fr 1fr',
+			gridTemplateRows: `repeat(${parks.length / 2}, 1fr)`,
+		},
+	};
+
+	return (
+		<div>
+			<div>
+				<Search />
+			</div>
+			<div className='parks' style={styles.gridContainer}>
+				{parks.map((park) => (
+					<ParkCard />
+				))}
+			</div>
+		</div>
+	);
+};
+
+export default Home;
