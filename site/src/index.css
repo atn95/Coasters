@@ -69,3 +69,11 @@ code {
 	opacity: 0.6;
 	height: 100%;
 }
+
+.parkPage{
+	text-align: center;
+	border: 15px;
+	font-family: 'Mochiy Pop One', sans-serif;
+	color: white;
+	background-color: black;
+}
