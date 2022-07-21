@@ -5,9 +5,47 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url('https://images.prismic.io/mystique/b8694bf4-1d63-4e3f-a62c-5fdfb753d990_Rollercoaster.jpg?auto=compress%2Cformat&h=334.5&q=75&fit=crop&ar=14%3A11&fm=webp');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.appHeader{
+  background-color: gray;
+  text-align:center;
+  margin: 15px;
+  padding: 4rem;
+  opacity: 75%;
+}
+
+.coasterTitle{
+  font-size: 5rem;
+}
+
+.searchInput{
+  opacity: 90%; 
+  width: 15rem;
+  height: 2rem;
+  font-size: 1rem;
+  
+}
+
+.parks{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 50px;
+  align-self: auto;
+  flex-wrap: wrap;
+  width: 45rem;
+
 }

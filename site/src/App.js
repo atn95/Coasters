@@ -6,13 +6,13 @@ import Coasters from "./components/Coasters";
 function App() {
   return (
     <div className="App">
-      <header>
+      <header className="appHeader">
         <Home />
       </header>
 
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<p> Park</p>} />
           <Route path="/park/:parkId" element={<Park />} />
           <Route path="/coaster/:coasterId" element={<Coasters />} />
         </Routes>
