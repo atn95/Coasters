@@ -41,12 +41,7 @@ const Home = () => {
 			</div>
 			<div className='parks' style={styles.gridContainer}>
 				{parks.map((park) => (
-					<ParkCard
-						name={'Park Name'}
-						image={
-							'https://sf-static.sixflags.com/wp-content/uploads/Jersey-Devil-closeup-11-1-1024x743.jpg'
-						}
-					/>
+					<ParkCard name={park.name} image={park.image} />
 				))}
 			</div>
 		</div>

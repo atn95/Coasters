@@ -6,6 +6,10 @@ function ParkCard(props) {
 			borderRadius: `10px`,
 			backgroundColor: `rgb(0,0,0)`,
 			opacity: `1`,
+			display: `flex`,
+			flexDirection: `column`,
+			justifyContent: `center`,
+			alignItems: `center`,
 		},
 	};
 
