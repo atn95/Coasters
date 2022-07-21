@@ -2,6 +2,26 @@ import React from 'react'
 import Search from './Search'
 
 const Home = () => {
+
+    const parks = ['Park_pic','Park_pic','Park_pic','Park_pic','Park_pic','Park_pic','Park_pic'];
+
+const styles = {
+        flexContainer: {
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            border: '2px solid red',
+        },
+        gridContainer: {
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gridTemplateRows: `repeat(${parks.length / 3}, 1fr)`,
+        },
+    };
+
+
+
+
     return(
         <div>
             <div>
@@ -10,7 +30,7 @@ const Home = () => {
             <div>
                 <Search/>
             </div>
-            <div className = 'parks'>
+            <div className = 'parks' style = {styles.gridContainer}>
                 <p>park 1</p>
                 <p>park 2</p>
                 <p>park 3</p>
