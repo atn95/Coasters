@@ -17,6 +17,8 @@ const Home = () => {
 		getParks();
 	}, []);
 
+	const itemsPerRow = 3;
+
 	const styles = {
 		flexContainer: {
 			display: 'flex',
@@ -26,8 +28,9 @@ const Home = () => {
 		},
 		gridContainer: {
 			display: 'grid',
-			gridTemplateColumns: '1fr 1fr',
-			gridTemplateRows: `repeat(${parks.length / 2}, 1fr)`,
+			gridTemplateColumns: `repeat(${itemsPerRow}, 1fr)`,
+			gridTemplateRows: `repeat(${parks.length / 3}, 1fr)`,
+			gap: `20px`,
 		},
 	};
 
@@ -38,7 +41,7 @@ const Home = () => {
 			</div>
 			<div className='parks' style={styles.gridContainer}>
 				{parks.map((park) => (
-					<ParkCard />
+					<ParkCard name={park.name} image={park.image} />
 				))}
 			</div>
 		</div>
