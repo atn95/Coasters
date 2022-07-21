@@ -18,8 +18,9 @@ const getCoasterByID = async (req, res) => {
 		let park = await CoasterPlant.findById(id);
 		if (park) {
 			res.json(park[0]);
+		} else {
+			res.send('invalid coaster');
 		}
-		res.send('invalid coaster');
 	} catch (error) {}
 };
 
