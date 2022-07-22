@@ -23,7 +23,6 @@ useEffect(()=>{
 },[parkId])
 
 	return (
-
 	<div className = 'parkPage'>
 		<main >
 			<h1>Park Name </h1>
