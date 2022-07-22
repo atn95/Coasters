@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
+import '../dropdown.css';
 
 const Park = (props) => {
 	let { parkId } = useParams();
@@ -37,20 +38,60 @@ const Park = (props) => {
 			margin: '5px auto',
 			borderRadius: '10px',
 		},
+		filterDiv: {
+			display: `flex`,
+			justifyContent: `flex-end`,
+		},
 	};
+
+	function sortBySpeed() {
+		let speedList = coasters
+			.map((coaster) => coaster)
+			.sort((a, b) => {
+				return (
+					parseInt(b.top_speed.split(` `)[0]) -
+					parseInt(a.top_speed.split(` `)[0])
+				);
+			});
+		setCoasters(speedList);
+	}
+
+	function sortByHeight() {
+		let heightList = coasters
+			.map((coaster) => coaster)
+			.sort((a, b) => {
+				return (
+					parseInt(b.height.split(` `)[0]) - parseInt(a.height.split(` `)[0])
+				);
+			});
+		console.log(heightList);
+		setCoasters(heightList);
+	}
 
 	return (
 		<div className='parkPage'>
 			<main>
+				<div style={styles.filterDiv}>
+					<ul>
+						{' '}
+						Filter
+						<li onClick={() => sortBySpeed()}>Speed</li>
+						<li onClick={() => sortByHeight()}>Height</li>
+						<li>Duration</li>
+					</ul>
+				</div>
 				<div style={styles.coasterBox}>
 					{coasters.map((coaster) => (
 						<div
 							key={coaster.name}
 							style={styles.coasterCard}
-							onClick={() => props.goTo('/coaster/' + coaster._id)}>
+							onClick={() => props.goTo('coaster/' + coaster._id)}>
 							<h1>{coaster.name}</h1>
 							<img src={coaster.image} />
-							<p className='info'>Top Speed: {coaster.top_speed}</p>
+							<p className='info'>
+								Top Speed: {coaster.top_speed} || Height: {coaster.height} ||{' '}
+								Duration: {coaster.duration}
+							</p>
 						</div>
 					))}
 				</div>
