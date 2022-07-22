@@ -18,15 +18,15 @@ app.get('/', (req, res) => {
 	res.send('root successfully loaded');
 });
 
-app.get(
-	'/coasters',
-	(req, res, next) => {
-		console.log(dbCalls.coaster);
-		// res.send('testing');
-		next();
-	},
-	dbCalls.coaster.getAllCoasters
-);
+app.get('/coasters',
+  (req, res, next) => {
+    console.log(dbCalls.coaster)
+    // res.send('testing');
+    next()
+  },
+  dbCalls.coaster.getAllCoasters
+)
+
 
 app.get(
 	'/coasters/:id',
@@ -47,6 +47,7 @@ app.get(
 );
 
 app.get(
+
 	'/parks',
 	(req, res, next) => {
 		console.log(dbCalls.park);
@@ -81,3 +82,4 @@ app.get(
 	},
 	dbCalls.coaster.getAllCoasters
 );
+
