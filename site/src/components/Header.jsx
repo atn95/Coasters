@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
 	return (
@@ -6,6 +7,8 @@ function Header() {
 			<div>
 				<h1 className='coasterTitle'> Coaster Crazy </h1>
 			</div>
+			<Link to='/'>Home</Link> ||
+			<Link to='/coasters'>All Coasters</Link>
 		</header>
 	);
 }
