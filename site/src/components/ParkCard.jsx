@@ -14,7 +14,7 @@ function ParkCard(props) {
 	};
 
 	return (
-		<div style={styles.container}>
+		<div style={styles.container} onClick={props.onClick}>
 			<div className='img-container'>
 				<img className='park-img' src={props.image} />
 			</div>
