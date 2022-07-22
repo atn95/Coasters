@@ -54,7 +54,7 @@ app.get(
 	dbCalls.park.getParkByID
 );
 app.get(
-	'/coasters/:id',
+	'/coasters/:id/:apple',
 	(req, res, next) => {
 		console.log('called');
 		next();
@@ -66,7 +66,6 @@ app.get(
 	'/coasters',
 	(req, res, next) => {
 		console.log(dbCalls.coaster);
-		// res.send('testing');
 		next();
 	},
 	dbCalls.coaster.getAllCoasters
