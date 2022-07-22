@@ -8,7 +8,7 @@ body {
 	background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp7468969.jpg&f=1&nofb=1');
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh ;
+	height: 100vh;
 }
 
 code {
@@ -21,7 +21,7 @@ code {
 	text-align: center;
 	margin: 15px;
 	padding: 4rem;
-	opacity: 75%;
+	opacity: 90%;
 }
 
 .search-bar {
@@ -66,7 +66,7 @@ code {
 	padding: 1rem;
 	background-color: gray;
 	margin: 15px;
-	opacity: 0.6;
+	opacity: 0.9;
 	height: 100%;
 }
 
