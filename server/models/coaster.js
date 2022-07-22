@@ -7,10 +7,9 @@
  * url (img)
  * park id
  */
-const { Schema } = require('mongoose');
+const { Schema } = require("mongoose");
 
 const Coaster = new Schema(
-
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
@@ -18,10 +17,9 @@ const Coaster = new Schema(
     top_speed: { type: String, required: true },
     duration: { type: String, required: true },
     image: { type: String, required: true },
-    park_id: { type: Schema.Types.ObjectId, ref: 'Park' }
+    park_id: { type: Schema.Types.ObjectId, ref: "Park" },
   },
   { timestamps: true }
-)
-
+);
 
 module.exports = Coaster;

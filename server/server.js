@@ -3,6 +3,7 @@ const db = require('./db');
 const logger = require('morgan');
 const dbCalls = require('./controllers');
 const cors = require('cors');
+const { Coaster } = require('./models');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -37,6 +38,15 @@ app.get(
 );
 
 app.get(
+	'/park/coaster/:id',
+	(req, res, next) => {
+		console.log('getting coaster by park id');
+		next();
+	},
+	dbCalls.coaster.getCoasterByParkId
+);
+
+app.get(
 	'/parks',
 	(req, res, next) => {
 		console.log(dbCalls.park);
@@ -54,7 +64,7 @@ app.get(
 	dbCalls.park.getParkByID
 );
 app.get(
-	'/coasters/:id/:apple',
+	'/coasters/:id',
 	(req, res, next) => {
 		console.log('called');
 		next();
@@ -66,6 +76,7 @@ app.get(
 	'/coasters',
 	(req, res, next) => {
 		console.log(dbCalls.coaster);
+		// res.send('testing');
 		next();
 	},
 	dbCalls.coaster.getAllCoasters
