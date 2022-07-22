@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../index.css';
 
-const Park = () => {
+const Park = (props) => {
 	let { parkId } = useParams();
 	const [coasters, setCoasters] = useState([]);
 	let navigate = useNavigate();
@@ -46,7 +47,7 @@ const Park = () => {
 						<div
 							key={coaster.name}
 							style={styles.coasterCard}
-							onClick={() => navigate('coaster/' + coaster._id)}>
+							onClick={() => props.goTo('/coaster/' + coaster._id)}>
 							<h1>{coaster.name}</h1>
 							<img src={coaster.image} />
 							<p className='info'>Top Speed: {coaster.top_speed}</p>
