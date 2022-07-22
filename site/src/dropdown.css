@@ -1,0 +1,21 @@
+ul {
+	list-style-type: none;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgb(0, 0, 0);
+}
+
+ul li {
+	display: none;
+}
+
+ul:hover li {
+	display: block;
+}
+
+li:hover {
+	outline: 2px solid white;
+}

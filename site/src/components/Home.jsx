@@ -19,37 +19,6 @@ const Home = () => {
 
 	let navigate = useNavigate();
 
-	useEffect(() => {
-		const getParks = async () => {
-			const response = await fetch(
-				'https://docs.google.com/spreadsheets/d/1gSsbtsN-lxL98gCOhs9q80APHs69lhwquXSJ5vRUQGg/gviz/tq?sheet=Coasters'
-			);
-			let data = await response.text();
-			let parsedResponse = JSON.parse(data.substring(47).slice(0, -2)).table
-				.rows;
-			let parksArray = [];
-			parsedResponse.forEach((row) => {
-				let rowInfo = [];
-				row.c.forEach((col) => {
-					// console.log()
-					if (col.v != null) rowInfo.push(col.v);
-				});
-				let obj = {
-					name: rowInfo[0],
-					desccription: rowInfo[1],
-					height: rowInfo[2],
-					top_speed: rowInfo[3],
-					duration: rowInfo[4],
-					image: rowInfo[5],
-					park_id: rowInfo[6],
-				};
-				parksArray.push(obj);
-			});
-			console.log(parksArray);
-		};
-		getParks();
-	}, []);
-
 	const itemsPerRow = 3;
 
 	const styles = {
@@ -75,7 +44,6 @@ const Home = () => {
 					<ParkCard
 						name={park.park_name}
 						image={park.image}
-						goTo={goTo}
 						onClick={() => navigate(`park/${park._id}`)}
 					/>
 				))}

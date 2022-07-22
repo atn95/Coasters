@@ -3,15 +3,20 @@ import Home from './components/Home';
 import Park from './components/Park';
 import Coasters from './components/Coasters';
 import Header from './components/Header';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+	let navigate = useNavigate();
+	function goTo(to) {
+		navigate(to);
+	}
 	return (
 		<div className='App'>
 			<Header />
 			<main className='body'>
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='/park/:parkId' element={<Park />} />
+					<Route path='/park/:parkId' element={<Park goTo={goTo} />} />
 					<Route path='/coaster/:coasterId' element={<Coasters />} />
 				</Routes>
 			</main>
