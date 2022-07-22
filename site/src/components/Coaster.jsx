@@ -12,7 +12,6 @@ const Coaster = () => {
 			const res = await axios.get(
 				`http://localhost:3001/coasters/${coasterId}`
 			);
-			console.log(res.data);
 
 			setCoasters(res.data);
 		};

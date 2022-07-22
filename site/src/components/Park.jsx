@@ -16,8 +16,6 @@ const Park = (props) => {
 			const res = axios
 				.get(`http://127.0.0.1:3001/park/coaster/${parkId}`)
 				.then((res) => {
-					console.log(res.data);
-					console.log(parkId);
 					setCoasters(res.data);
 				});
 		}
@@ -64,7 +62,6 @@ const Park = (props) => {
 					parseInt(b.height.split(` `)[0]) - parseInt(a.height.split(` `)[0])
 				);
 			});
-		console.log(heightList);
 		setCoasters(heightList);
 	}
 
