@@ -28,13 +28,6 @@ const Home = () => {
 			gridTemplateRows: `repeat(${parks.length / 3}, 1fr)`,
 			gap: `20px`,
 		},
-		linkContainer: {
-			display: `flex`,
-			justifyContent: `flex-end`,
-		},
-		buttonStyle: {
-			padding: `1rem`,
-		},
 	};
 
 	function goTo(to) {
@@ -43,13 +36,6 @@ const Home = () => {
 
 	return (
 		<div>
-			<div style={styles.linkContainer}>
-				<button
-					style={styles.buttonStyle}
-					onClick={() => navigate('/coasters')}>
-					All Coasters
-				</button>
-			</div>
 			<div className='parks' style={styles.gridContainer}>
 				{parks.map((park) => (
 					<ParkCard
