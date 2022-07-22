@@ -13,7 +13,6 @@ const Coasters = (props) => {
 	useEffect(() => {
 		async function getCoasters() {
 			const res = axios.get(`http://127.0.0.1:3001/coasters`).then((res) => {
-				console.log(res);
 				setCoasters(res.data);
 			});
 		}
@@ -60,7 +59,6 @@ const Coasters = (props) => {
 					parseInt(b.height.split(` `)[0]) - parseInt(a.height.split(` `)[0])
 				);
 			});
-		console.log(heightList);
 		setCoasters(heightList);
 	}
 
