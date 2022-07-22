@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 })
 
 app.get(
-
   '/coasters',
   (req, res, next) => {
     console.log(dbCalls.coaster)
@@ -53,22 +52,22 @@ app.get(
   },
   dbCalls.park.getParkByID
 )
-=======
-	'/coasters/:id',
-	(req, res, next) => {
-		console.log('called');
-		next();
-	},
-	dbCalls.coaster.getCoasterByID
-);
 
 app.get(
-	'/coasters',
-	(req, res, next) => {
-		console.log(dbCalls.coaster);
-		// res.send('testing');
-		next();
-	},
-	dbCalls.coaster.getAllCoasters
-);
+  '/coasters/:id',
+  (req, res, next) => {
+    console.log('called')
+    next()
+  },
+  dbCalls.coaster.getCoasterByID
+)
 
+app.get(
+  '/coasters',
+  (req, res, next) => {
+    console.log(dbCalls.coaster)
+    // res.send('testing');
+    next()
+  },
+  dbCalls.coaster.getAllCoasters
+)
