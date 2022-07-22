@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Park from './components/Park';
-import Coasters from './components/Coasters';
+import Coaster from './components/Coaster';
 import Header from './components/Header';
 import { useNavigate } from 'react-router-dom';
+import Coasters from './components/Coasters';
 
 function App() {
 	let navigate = useNavigate();
@@ -17,7 +18,8 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/park/:parkId' element={<Park goTo={goTo} />} />
-					<Route path='/coaster/:coasterId' element={<Coasters />} />
+					<Route path='/coasters' element={<Coasters goTo={goTo} />} />
+					<Route path='/coaster/:coasterId' element={<Coaster />} />
 				</Routes>
 			</main>
 			{/* <Route path =  /> */}

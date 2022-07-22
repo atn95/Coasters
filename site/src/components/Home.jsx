@@ -36,9 +36,7 @@ const Home = () => {
 
 	return (
 		<div>
-			<div>
-				<Search />
-			</div>
+			<button onClick={() => navigate('/coasters')}>All Coasters</button>
 			<div className='parks' style={styles.gridContainer}>
 				{parks.map((park) => (
 					<ParkCard
