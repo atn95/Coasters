@@ -30,7 +30,6 @@ const Home = () => {
 			let parksArray = [];
 			parsedResponse.forEach((row) => {
 				let rowInfo = [];
-				console.log(row);
 				row.c.forEach((col) => {
 					// console.log()
 					if (col.v != null) rowInfo.push(col.v);
@@ -62,6 +61,10 @@ const Home = () => {
 		},
 	};
 
+	function goTo(to) {
+		navigate(to);
+	}
+
 	return (
 		<div>
 			<div>
@@ -72,6 +75,7 @@ const Home = () => {
 					<ParkCard
 						name={park.park_name}
 						image={park.image}
+						goTo={goTo}
 						onClick={() => navigate(`park/${park._id}`)}
 					/>
 				))}
