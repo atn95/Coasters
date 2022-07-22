@@ -9,7 +9,7 @@ const Home = () => {
 
 	useEffect(() => {
 		async function getParks() {
-			let parks = axios.get('http://localhost:3001/coasters').then((res) => {
+			let parks = axios.get('http://localhost:3001/parks').then((res) => {
 				console.log(res.data);
 				setParks(res.data);
 			});
@@ -41,7 +41,7 @@ const Home = () => {
 			</div>
 			<div className='parks' style={styles.gridContainer}>
 				{parks.map((park) => (
-					<ParkCard name={park.name} image={park.image} />
+					<ParkCard name={park.park_name} image={park.image} />
 				))}
 			</div>
 		</div>
